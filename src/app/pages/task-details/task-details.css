@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.isCompleted {
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: white;
+}
+button {
+  outline: none;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  max-width: 200px;
+}

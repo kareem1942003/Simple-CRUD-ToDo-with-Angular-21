@@ -1,0 +1,92 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(214.3, 31.8%, 91.4%);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.form-container h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  letter-spacing: -0.025em;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid hsl(214.3, 31.8%, 91.4%);
+  border-radius: 6px;
+  font-size: 14px;
+  color: black;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  background-color: hsl(0, 0, 100%);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: hsl(214.3, 31.8%, 91.4%);
+  box-shadow: 0px 0px 0px 3px rgba(214, 214, 214, 0.5);
+  border-color: hsl(221.2, 83.2%, 53.3%);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.error-message {
+  color: hsl(0, 86%, 47%);
+  font-size: 12px;
+  margin-top: 4px;
+}
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: hsl(197, 83%, 53%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+button:hover {
+  background-color: hsl(197, 70%, 40%);
+}
+button[type='submit']:hover:not(:disabled) {
+  background-color: hsl(197, 70%, 40%);
+}
+button[type='submit']:disabled {
+  background-color: hsl(214.3, 31.8%, 91.4%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+button.secondary {
+  background-color: transparent;
+  color: black;
+  border: 1px solid hsl(214.3, 31.8%, 91.4%);
+}
+
+button.secondary:hover {
+  background: hsl(210, 40%, 96.4%);
+}

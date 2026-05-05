@@ -1,0 +1,54 @@
+.task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.task-list {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-card {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 40px 4px #d9d9d97d;
+}
+.title {
+  text-decoration: none;
+}
+.isCompleted {
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: white;
+  width: fit-content;
+}
+.filter {
+  padding: 4px;
+  display: flex;
+  gap: 10px;
+  background-color: rgb(237, 237, 237);
+  border-radius: 8px;
+  width: fit-content;
+}
+.filter p {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.isActiveFilter {
+  background-color: rgb(255, 255, 255);
+}
+.complete-button {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: white;
+  padding: 4px 6px;
+  border-radius: 5px;
+  margin: 0;
+}

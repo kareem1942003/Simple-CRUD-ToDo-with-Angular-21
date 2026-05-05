@@ -1,0 +1,29 @@
+<div>
+  <h1>Task Details</h1>
+
+  @if (task(); as currentTask) {
+    <div class="container">
+      <div class="title-row">
+        <h1>{{ currentTask.title }}</h1>
+        <p
+          [ngStyle]="{
+            'background-color': currentTask.completed ? 'rgb(0, 188, 103)' : 'rgb(255, 178, 34) ',
+          }"
+          class="isCompleted"
+        >
+          {{ currentTask.completed ? 'Completed' : 'Active' }}
+        </p>
+      </div>
+      <div class="info">
+        <p>Description: {{ currentTask.descriptaion }}</p>
+        <p>Created: {{ currentTask?.createdAt?.toLocaleDateString() }}</p>
+      </div>
+      <button routerLink="/">Back to list</button>
+    </div>
+  } @else {
+    <div>
+      <p>No Task found</p>
+      <button routerLink="/">Back to list</button>
+    </div>
+  }
+</div>

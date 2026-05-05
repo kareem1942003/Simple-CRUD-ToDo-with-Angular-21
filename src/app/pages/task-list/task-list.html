@@ -1,0 +1,63 @@
+<div class="task-section">
+  <h1>Task Managment</h1>
+  <div class="filter">
+    <p [class.isActiveFilter]="filter() === 'all'" (click)="setfilter('all')">All</p>
+    <p [class.isActiveFilter]="filter() === 'active'" (click)="setfilter('active')">Active</p>
+    <p [class.isActiveFilter]="filter() === 'completed'" (click)="setfilter('completed')">
+      Completed
+    </p>
+  </div>
+  @if (!filteredTasks().length) {
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        flex-direction: column;
+      "
+    >
+      <p>No tasks found, Please add task to get started</p>
+    </div>
+  }
+  <div class="task-list">
+    @for (task of filteredTasks(); track $index) {
+      <div class="task-card">
+        <div class="task-content">
+          <div style="display: flex; justify-content: space-between; align-items: center">
+            <div>
+              <a class="title" [routerLink]="['/task', task.id]">
+                <h3
+                  [ngStyle]="{
+                    color: task.color,
+                  }"
+                >
+                  {{ task.title }}
+                </h3>
+              </a>
+              <p
+                [ngStyle]="{
+                  'background-color': task.completed ? 'rgb(0, 188, 103)' : 'rgb(255, 178, 34) ',
+                }"
+                class="isCompleted"
+              >
+                {{ task.completed ? 'Completed' : 'Active' }}
+              </p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center">
+              @if (!task.completed) {
+                <p class="complete-button" (click)="changeTaskStatus(task.id)">Complete</p>
+              }
+
+              <p (click)="deleteTask(task.id)" style="cursor: pointer; color: rgb(255, 92, 92)">
+                Delete
+              </p>
+            </div>
+          </div>
+          <p>{{ task.descriptaion }}</p>
+          <small>Created: {{ task?.createdAt?.toLocaleDateString() }}</small>
+        </div>
+      </div>
+    }
+  </div>
+</div>
